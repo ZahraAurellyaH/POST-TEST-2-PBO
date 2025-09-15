@@ -7,13 +7,13 @@
 <img width="341" height="221" alt="image" src="https://github.com/user-attachments/assets/98d4c589-bc69-4169-94ee-126b09c982d5" />
 
 
-1. main
+1. `main`
 - Berisi Main.java
 - Fungsi: Menjadi titik masuk (entry point) program. Di sini terdapat menu interaktif untuk user (CRUD: Tambah, Lihat, Ubah, Hapus).
-2. model
+2. `model`
 - Berisi Peminjaman.java
-- Fungsi: Menyimpan struktur data (atribut namaPeminjam, nim, departemen, namaBarang, jumlah) beserta constructor, getter, dan setter. Class ini merepresentasikan objek peminjaman.
-3. service
+- Fungsi: Menyimpan struktur data (atribut nama, nim, departemen, namaBarang, jumlah) beserta constructor. Class ini merepresentasikan objek peminjaman.
+3. `service`
 - Berisi PeminjamanService.java
 - Fungsi: Mengelola logika CRUD. Berisi method untuk menambah, melihat, mengubah, dan menghapus data Peminjaman
 
@@ -21,69 +21,82 @@
 <img width="196" height="25" alt="image" src="https://github.com/user-attachments/assets/ff275713-b856-4cd8-a570-a40ca91fda3b" />
 
 
-Package model berisi class yang merepresentasikan struktur data peminjaman. Di dalamnya terdapat properti, constructor, dan metode akses (getter/setter) yang digunakan sebagai dasar pengolahan data pada sistem manajemen peminjaman barang.
+Package `model` berisi class yang merepresentasikan struktur data peminjaman. Di dalamnya terdapat properti, constructor, dan metode akses yang digunakan sebagai dasar pengolahan data pada sistem manajemen peminjaman barang.
 
 #
-<img width="311" height="168" alt="image" src="https://github.com/user-attachments/assets/f8f07dc5-1f20-47f3-a858-16b8ab11c09b" />
+<img width="591" height="92" alt="image" src="https://github.com/user-attachments/assets/b3c3067a-9147-49fa-ba36-24d6de593991" />
 
-Class Peminjaman di atas berfungsi untuk merepresentasikan data peminjaman barang. Memiliki 5 properti: namaPeminjam, nim, departemen, namaBarang, dan jumlah. Terdapat constructor untuk mengisi data saat objek dibuat. Disediakan method tampilkanInfo() yang langsung menampilkan semua informasi peminjaman ke layar.
+Class `Peminjaman` di atas berfungsi untuk merepresentasikan data peminjaman barang. Memiliki 5 properti, 4 diantaranya tipe  data string :nama, nim, departemen, namaBarang; dan yang satunya tipe data integer yaitu jumlah. 
+#
+<img width="1096" height="196" alt="image" src="https://github.com/user-attachments/assets/1b51816e-71d4-4e71-ae49-ab091d2a6b8c" />
+
+`Constructor Peminjaman` berfungsi untuk membuat objek baru dan langsung mengisi semua atribut (nama, nim, departemen, barang, jumlah) dengan data yang diberikan saat objek dibuat.
 
 #
-<img width="1305" height="188" alt="Screenshot 2025-09-14 133645" src="https://github.com/user-attachments/assets/1eed385b-be68-4bfa-a728-7ad13cf96247" />
+<img width="713" height="224" alt="image" src="https://github.com/user-attachments/assets/60a16ddb-d9d6-45ba-9f77-c37fb1cd7127" />
 
-Terdapat constructor untuk mengisi data saat objek dibuat.
-
-#
-<img width="863" height="213" alt="image" src="https://github.com/user-attachments/assets/9efbc18a-0f42-4a22-a56d-08163c2f76be" />
-
-Disediakan method tampilkanInfo() yang langsung menampilkan semua informasi peminjaman ke layar.
+Disediakan method `tampilkanInfo()` yang langsung menampilkan semua informasi peminjaman ke layar.
 
 ### PEMINJAMANSERVICE.JAVA
 <img width="207" height="26" alt="image" src="https://github.com/user-attachments/assets/3e78bf60-7612-44d7-98bc-bc967346b79a" />
 
-
-Menyatakan bahwa class ini berada di dalam package service.
-
-<img width="510" height="86" alt="image" src="https://github.com/user-attachments/assets/9e4fc2ef-d135-4e31-8cc8-351df7feea22" />
-
-- Mengimpor class Peminjaman dari package model. Dibutuhkan supaya service bisa membuat, membaca, mengubah, atau menghapus objek Peminjaman.
-- Mengimpor class ArrayList dari Java Collections Framework. Digunakan untuk menyimpan data Peminjaman secara dinamis (bisa bertambah atau berkurang).
-- Mengimpor class Scanner untuk membaca input dari user lewat keyboard (misalnya nama, nim, barang, dll).
+Menyatakan bahwa class ini berada di dalam `package service`.
 
 #
-<img width="791" height="103" alt="image" src="https://github.com/user-attachments/assets/229fbead-470b-4f97-8b71-4d4716833bdc" />
+<img width="369" height="89" alt="image" src="https://github.com/user-attachments/assets/cbb29ebe-bb20-4eee-b8e3-99fb60ead115" />
 
-Class PeminjamanService dideklarasikan dengan public, artinya bisa diakses dari package lain. Membuat ArrayList yang menyimpan objek Peminjaman. Membuat objek Scanner untuk membaca input dari pengguna melalui keyboard.
-
-#
-<img width="1020" height="575" alt="image" src="https://github.com/user-attachments/assets/5884f067-e729-4713-aa8a-00e5eebd9ff1" />
-
-Method `public void tambahPeminjaman()` berfungsi untuk menambahkan data peminjaman baru ke dalam daftar. Pertama, program meminta input dari pengguna berupa nama, NIM, departemen, nama barang, dan jumlah barang menggunakan `Scanner`. Setelah itu dilakukan validasi, jika jumlah barang yang dimasukkan kurang dari 1 maka program menolak dan menampilkan pesan error. Jika valid, program akan membuat objek baru dari class `Peminjaman` dengan data yang dimasukkan, kemudian menambahkannya ke `ArrayList daftarPeminjaman`, dan memberikan konfirmasi bahwa data berhasil ditambahkan.
+- Mengimpor `class Peminjaman` dari package model. Dibutuhkan supaya service bisa membuat, membaca, mengubah, atau menghapus objek Peminjaman.
+- Mengimpor `class ArrayList` dari Java Collections Framework. Digunakan untuk menyimpan data Peminjaman secara dinamis (bisa bertambah atau berkurang).
+- Mengimpor `class Scanner` untuk membaca input dari user lewat keyboard (misalnya nama, nim, barang, dll).
 
 #
-<img width="818" height="338" alt="image" src="https://github.com/user-attachments/assets/84e2faf7-35ad-4ea9-a4f2-bff361c525b0" />
+<img width="651" height="91" alt="image" src="https://github.com/user-attachments/assets/3eab6d8f-36c6-4ad3-b757-e2afab0a952c" />
 
-Method `public void lihatPeminjaman()` digunakan untuk menampilkan seluruh data peminjaman yang tersimpan di dalam `ArrayList daftarPeminjaman`. Pertama, program mencetak judul daftar, lalu melakukan pengecekan apakah daftar masih kosong. Jika kosong, ditampilkan pesan bahwa belum ada data peminjaman. Namun, jika ada data, program akan melakukan perulangan `for` untuk menampilkan setiap data secara berurutan, dengan menampilkan nomor urut, memanggil method `tampilkanInfo()` dari objek `Peminjaman` untuk menampilkan detail peminjaman, lalu memberikan pemisah garis agar data terlihat lebih rapi.
-
-#
-<img width="813" height="202" alt="image" src="https://github.com/user-attachments/assets/074f720d-0488-476c-b9ce-1acb1dda7bc7" />
-
-Method `public void ubahPeminjaman()` digunakan untuk mengubah data peminjaman yang sudah ada. Pertama, method ini memanggil `lihatPeminjaman()` agar pengguna bisa melihat daftar data yang tersedia. Jika daftar masih kosong, method langsung dihentikan dengan `return`. Jika ada data, program meminta input nomor data yang ingin diubah, kemudian dikurangi 1 agar sesuai dengan indeks `ArrayList` (karena indeks dimulai dari 0), lalu `scanner.nextLine()` digunakan untuk membersihkan buffer input setelah pengguna memasukkan angka.
+Class `PeminjamanService` dideklarasikan dengan public, artinya bisa diakses dari package lain. Membuat ArrayList yang menyimpan objek Peminjaman. Membuat objek Scanner untuk membaca input dari pengguna melalui keyboard.
 
 #
-<img width="1316" height="547" alt="image" src="https://github.com/user-attachments/assets/973b766f-8040-4e3d-9bad-dd6b265630c3" />
+<img width="901" height="250" alt="image" src="https://github.com/user-attachments/assets/70414091-e2e0-48fb-9462-1646bd30ad78" />
 
-Potongan kode di atas adalah bagian dari method `ubahPeminjaman()` yang berfungsi memperbarui data peminjaman. Pertama dicek apakah indeks yang dipilih (`idxUbah`) valid, yaitu berada dalam rentang ukuran `daftarPeminjaman`. Jika valid, program meminta input data baru dari pengguna, mulai dari nama, NIM, departemen, barang, hingga jumlah. Setelah itu dilakukan validasi jumlah agar tidak kurang dari 1. Jika jumlah valid, data lama pada posisi `idxUbah` diganti dengan objek `Peminjaman` baru menggunakan `daftarPeminjaman.set(idxUbah, p)`. Terakhir, sistem menampilkan pesan bahwa data berhasil diubah.
-
-#
-<img width="691" height="114" alt="image" src="https://github.com/user-attachments/assets/af7849f7-c7e3-4fa5-b83b-e452a8c63c4c" />
-
-Potongan kode tersebut adalah bagian penutup dari method ubahPeminjaman(). Jika indeks yang dimasukkan pengguna (idxUbah) tidak sesuai dengan rentang data yang ada di daftarPeminjaman, maka blok else akan dijalankan dan menampilkan pesan "Nomor tidak valid!".
+Metode `inputString` digunakan untuk membaca input teks dari pengguna dan memastikan input tidak kosong sebelum dikembalikan.
 
 #
-<img width="821" height="437" alt="image" src="https://github.com/user-attachments/assets/d23f3dbe-e8ed-40c1-bcab-1150b40ee43c" />
+<img width="1107" height="252" alt="image" src="https://github.com/user-attachments/assets/f1252154-88f4-450f-96d5-1658c4a9cfa1" />
 
-Method `hapusPeminjaman()` berfungsi untuk menghapus data peminjaman dari daftar. Pertama, method memanggil `lihatPeminjaman()` agar pengguna bisa melihat daftar data yang tersedia. Jika daftar kosong, method langsung berhenti dengan `return`. Jika ada data, pengguna diminta memilih nomor data yang ingin dihapus, lalu program mengurangi nilai input dengan `-1` agar sesuai dengan indeks `ArrayList`. Jika nomor valid (masuk dalam rentang data), maka data pada indeks tersebut dihapus dengan `remove()`, dan program menampilkan pesan **"Data berhasil dihapus!"**. Jika tidak valid, maka akan muncul pesan **"Nomor tidak valid!"**. Kurung kurawal terakhir `}` menutup method, dan `}` berikutnya menutup kelas `PeminjamanService`.
+Metode `inputNIM` digunakan untuk membaca input NIM dari pengguna dan memastikan NIM yang dimasukkan berupa **10 digit angka** sebelum dikembalikan.
+
+#
+<img width="911" height="384" alt="image" src="https://github.com/user-attachments/assets/31248eb1-2ed1-4410-a002-49cf07ab9dc4" />
+
+Metode `inputJumlah` digunakan untuk membaca input angka dari pengguna, memastikan nilainya **minimal 1**, dan mengembalikan `-1` jika input kosong (digunakan saat update untuk melewati perubahan jumlah).
+
+#
+<img width="869" height="251" alt="image" src="https://github.com/user-attachments/assets/26e25277-d26a-4ed7-8987-bb0e95684dd7" />
+
+Metode `tambah` digunakan untuk menambahkan data peminjaman baru dengan meminta pengguna memasukkan **nama, NIM, departemen, nama barang, dan jumlah**, kemudian membuat objek `Peminjaman` dan menambahkannya ke daftar.
+
+#
+<img width="991" height="217" alt="image" src="https://github.com/user-attachments/assets/c3c48401-3ce8-43ba-8294-eea8b2b34617" />
+
+Metode `lihat` digunakan untuk menampilkan semua data peminjaman yang tersimpan; jika daftar kosong, akan menampilkan pesan “Belum ada data.”.
+
+#
+<img width="755" height="438" alt="image" src="https://github.com/user-attachments/assets/811dac21-008f-4a21-bc84-190dab9952e6" />
+
+Metode `ubah` digunakan untuk mengubah data peminjaman yang sudah ada; pengguna memilih nomor data yang ingin diubah, kemudian mengisi nilai baru untuk atribut seperti **nama**, dan nilai tersebut langsung menggantikan data lama.
+
+#
+<img width="718" height="607" alt="image" src="https://github.com/user-attachments/assets/76ee7749-c550-46b2-90f1-4f13dbc1e25a" />
+
+Bagian kode ini adalah **lanjutan metode `ubah`**, fungsinya:
+
+* Meminta pengguna memasukkan **NIM baru** dan memvalidasinya agar berupa **10 digit angka** sebelum mengganti NIM lama.
+* Mengganti **departemen**, **nama barang**, dan **jumlah** dengan input baru dari pengguna.
+* Setelah semua data diperbarui, menampilkan pesan **“Data berhasil diubah!”** sebagai konfirmasi.
+
+#
+<img width="1223" height="280" alt="image" src="https://github.com/user-attachments/assets/58628af8-3b31-4180-82d8-863a9c41e3a7" />
+
+Metode `hapus` digunakan untuk menghapus data peminjaman tertentu; pengguna memilih nomor data yang ingin dihapus, kemudian data tersebut dihapus dari daftar, dan menampilkan pesan konfirmasi “Data berhasil dihapus!”.
 
 ### MAIN.JAVA
 <img width="172" height="29" alt="image" src="https://github.com/user-attachments/assets/26a5d691-ad40-43d1-aa29-c5871876f69d" />
@@ -91,26 +104,37 @@ Method `hapusPeminjaman()` berfungsi untuk menghapus data peminjaman dari daftar
 Menyatakan bahwa class ini berada di dalam package main.
 
 #
-<img width="627" height="86" alt="image" src="https://github.com/user-attachments/assets/d08f8f23-939c-4131-919f-467b931be552" />
+<img width="699" height="148" alt="image" src="https://github.com/user-attachments/assets/2f2bfb80-f9ec-42a5-af43-357959277a02" />
 
-Mengimpor class PeminjamanService dari package com.mycompany.service, yang berisi logika CRUD peminjaman.
-Mengimpor class InputMismatchException dari Java Utility, digunakan untuk menangani error ketika input user tidak sesuai tipe data yang diminta (misalnya memasukkan huruf padahal harus angka).
-Mengimpor class Scanner yang dipakai untuk membaca input dari keyboard (user).
+Bagian kode ini adalah **awal dari class `Main`** dan **metode `main`**, fungsinya:
 
-#
-<img width="765" height="131" alt="image" src="https://github.com/user-attachments/assets/79af23dd-90c9-4e33-9409-a4b865d03e16" />
+* Membuat objek `Scanner` (`sc`) untuk membaca input dari pengguna.
+* Membuat objek `PeminjamanService` (`ps`) untuk mengelola operasi peminjaman (tambah, lihat, ubah, hapus).
+* Mendeklarasikan variabel `pil` untuk menyimpan pilihan menu dari pengguna.
 
-Kode di atas menambahkan **validasi input** dengan `try-catch` untuk mencegah error ketika user memasukkan selain angka; jika salah, program menampilkan pesan "Input harus berupa angka!" dan kembali ke menu tanpa crash.
-
-#
-<img width="980" height="324" alt="image" src="https://github.com/user-attachments/assets/5738ccfc-22f3-4622-aebe-c3054b6f1c9d" />
-
-Potongan kode ini menampilkan menu utama lalu meminta input dari user. Input dibungkus dengan **try-catch** untuk mengantisipasi kesalahan, misalnya jika user memasukkan huruf saat diminta angka, sehingga program tetap aman dan tidak langsung error.
+Ini menjadi **titik masuk (entry point) program** di mana menu interaktif akan dijalankan.
 
 #
-<img width="1071" height="801" alt="image" src="https://github.com/user-attachments/assets/8af92baa-f2f5-4fe8-9213-bf736defb834" />
+<img width="973" height="328" alt="image" src="https://github.com/user-attachments/assets/b36d0c10-06b0-420a-b525-37f8782474f3" />
 
-Program ini menampilkan menu peminjaman dengan pilihan tambah, lihat, ubah, hapus, dan keluar, serta menangani input yang bukan angka.
+Bagian kode ini adalah **loop menu utama** program, fungsinya:
+* Menampilkan daftar pilihan menu untuk manajemen peminjaman: **Tambah, Lihat, Ubah, Hapus, Keluar**.
+* Membaca input pengguna sebagai string, lalu mencoba **mengubahnya menjadi angka** (`Integer.parseInt`).
+* Jika input bukan angka, akan ditangani exception dan variabel `pil` di-set `-1` agar dianggap pilihan tidak valid.
+Ini memungkinkan program tetap aman dari input yang salah dan terus menampilkan menu sampai pengguna memilih keluar.
+
+#
+<img width="897" height="297" alt="image" src="https://github.com/user-attachments/assets/ba15f8e6-7b80-4ce1-8a9d-f102ebe142f1" />
+
+Bagian kode ini adalah **struktur pengendalian menu** di `Main`:
+* Menggunakan `switch` untuk mengeksekusi **aksi sesuai pilihan** (`pil`) dari pengguna:
+  * `1` → memanggil `ps.tambah()` untuk menambah data peminjaman.
+  * `2` → memanggil `ps.lihat()` untuk menampilkan daftar peminjaman.
+  * `3` → memanggil `ps.ubah()` untuk mengubah data peminjaman.
+  * `4` → memanggil `ps.hapus()` untuk menghapus data peminjaman.
+  * `5` → menampilkan pesan “Terima kasih!” dan keluar dari program.
+  * `default` → menampilkan pesan “Pilihan tidak valid!” jika input tidak sesuai.
+* `do…while(pil != 5)` memastikan **menu terus muncul** sampai pengguna memilih opsi keluar (`5`).
 
 ### OUTPUT
 <img width="475" height="185" alt="image" src="https://github.com/user-attachments/assets/35efe001-75ea-4ea8-a200-76ef41745c05" />
@@ -118,29 +142,29 @@ Program ini menampilkan menu peminjaman dengan pilihan tambah, lihat, ubah, hapu
 Diatas merupakan output.
 
 #
-<img width="476" height="340" alt="image" src="https://github.com/user-attachments/assets/192b7f8d-a6a8-4a9b-993b-344c252d36e6" />
+<img width="477" height="430" alt="image" src="https://github.com/user-attachments/assets/7a9035a1-7fe2-462b-a07d-bc0e596b49af" />
 
-Diatas merupakan saat user memilih menu nomor 1, maka user akan dinminta beberapa keterangan saat meminjam barang sekre.
-
-#
-<img width="471" height="417" alt="image" src="https://github.com/user-attachments/assets/1b9509ed-9fe9-481c-8c1c-748882aee7b5" />
-
-Diatas saat user sudah melakukan pengisian data, dan memilih menu nomor 2. Maka akan menampilkan daftar orang yang sudah mengisi data peminjaman barang sekre.
+Diatas merupakan saat user memilih menu `nomor 1`, maka user akan diminta beberapa keterangan saat meminjam barang sekre. Saat memasukkan nim harus **sebanyak 10 angka**, jika kurang atau lebih maka akan ada peringatan. Dan juga saat memasukkan jumlah maka harus lebih dari nol nilainya.
 
 #
-<img width="490" height="594" alt="image" src="https://github.com/user-attachments/assets/55b4a6ea-93ed-4d21-9778-a0e736159d39" />
+<img width="473" height="349" alt="image" src="https://github.com/user-attachments/assets/616f6b65-496a-4b8c-9f76-db4bf1eaba22" />
 
-Diatas saat user ingin mengubah data orang yang pernah mengisi data peminjaman barang. User memilih menu nomor 3 yang akan diminta untuk mengisi beberapa keterangan yang baru.
+Diatas saat user sudah melakukan pengisian data, dan memilih menu `nomor 2`. Maka akan menampilkan daftar orang yang sudah mengisi data peminjaman barang sekre.
 
 #
-<img width="472" height="420" alt="image" src="https://github.com/user-attachments/assets/9b17224b-5829-4cfc-963b-6e35809599d9" />
+<img width="467" height="541" alt="image" src="https://github.com/user-attachments/assets/084ab8a3-ff38-478a-9be7-0e17c08b3f7e" />
+
+Diatas saat user ingin mengubah data orang yang pernah mengisi data peminjaman barang. User memilih menu `nomor 3` yang akan diminta untuk mengisi beberapa keterangan yang baru. Sama pada saat menambah peminjaman nim wajib berisi **10 angka**.
+
+#
+<img width="465" height="358" alt="image" src="https://github.com/user-attachments/assets/f1fd9089-7907-47f0-aebb-bf3860163a41" />
 
 Diatas merupakan hasil yang telah diubah oleh user pada daftar peminjaman barang.
 
 #
-<img width="480" height="475" alt="image" src="https://github.com/user-attachments/assets/871f9df5-cd10-4d76-b178-bb4215aa3c8f" />
+<img width="475" height="466" alt="image" src="https://github.com/user-attachments/assets/ec2ee201-0205-489b-80aa-413318e8606a" />
 
-Disaat user ingin menghapus daftar peminjaman barang, maka akan memilih menu nomor 4. Yang akan ditampilkan daftar peminjaman apa saja yang ada dan akan diminta nomor berapa yang akan dihapus.
+Disaat user ingin menghapus daftar peminjaman barang, maka akan memilih menu `nomor 4`. Yang akan ditampilkan daftar peminjaman apa saja yang ada dan akan diminta nomor berapa yang akan dihapus. Jika saat memilih nomor salah memasukkan, bukannya memasukkan angka malah memasukkan huruf maka akan ada peringatan.
 
 #
 <img width="483" height="263" alt="image" src="https://github.com/user-attachments/assets/1c7ec85f-62e5-4ea1-8def-5ecb34eed6db" />
@@ -148,6 +172,6 @@ Disaat user ingin menghapus daftar peminjaman barang, maka akan memilih menu nom
 Data peminjaman berhasil dihapus dalam daftar.
 
 #
-<img width="836" height="363" alt="image" src="https://github.com/user-attachments/assets/cb31614b-1068-4929-8f29-0910932be879" />
+<img width="823" height="357" alt="image" src="https://github.com/user-attachments/assets/e6ee19d1-4599-41ef-88e1-28d3be2cb93e" />
 
-Dan yang terakhir yaitu saat user memilih menu nomor 5, selanjutnya yaitu keluar dari program dan selesai.
+Dan yang terakhir yaitu saat user memilih `menu nomor 5`, selanjutnya yaitu keluar dari program dan selesai.
