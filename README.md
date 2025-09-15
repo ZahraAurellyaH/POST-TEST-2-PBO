@@ -4,22 +4,24 @@
 
 ## NIM:2409116062
 
-<img width="378" height="323" alt="Screenshot 2025-09-14 133527" src="https://github.com/user-attachments/assets/279b5825-7362-49df-b5fa-ec1a247312f7" />
+<img width="341" height="221" alt="image" src="https://github.com/user-attachments/assets/98d4c589-bc69-4169-94ee-126b09c982d5" />
 
-1. com.mycompany.main
+
+1. main
 - Berisi Main.java
 - Fungsi: Menjadi titik masuk (entry point) program. Di sini terdapat menu interaktif untuk user (CRUD: Tambah, Lihat, Ubah, Hapus).
-2. com.mycompany.model
+2. model
 - Berisi Peminjaman.java
 - Fungsi: Menyimpan struktur data (atribut namaPeminjam, nim, departemen, namaBarang, jumlah) beserta constructor, getter, dan setter. Class ini merepresentasikan objek peminjaman.
-3. com.mycompany.service
+3. service
 - Berisi PeminjamanService.java
 - Fungsi: Mengelola logika CRUD. Berisi method untuk menambah, melihat, mengubah, dan menghapus data Peminjaman
 
 ### PEMINJAMAN.JAVA
-<img width="401" height="41" alt="Screenshot 2025-09-14 133622" src="https://github.com/user-attachments/assets/7c2633f1-2680-4424-a00b-d2d43d30ac7c" />
+<img width="196" height="25" alt="image" src="https://github.com/user-attachments/assets/ff275713-b856-4cd8-a570-a40ca91fda3b" />
 
-Package com.mycompany.model berisi class yang merepresentasikan struktur data peminjaman. Di dalamnya terdapat properti, constructor, dan metode akses (getter/setter) yang digunakan sebagai dasar pengolahan data pada sistem manajemen peminjaman barang.
+
+Package model berisi class yang merepresentasikan struktur data peminjaman. Di dalamnya terdapat properti, constructor, dan metode akses (getter/setter) yang digunakan sebagai dasar pengolahan data pada sistem manajemen peminjaman barang.
 
 #
 <img width="311" height="168" alt="image" src="https://github.com/user-attachments/assets/f8f07dc5-1f20-47f3-a858-16b8ab11c09b" />
@@ -37,7 +39,8 @@ Terdapat constructor untuk mengisi data saat objek dibuat.
 Disediakan method tampilkanInfo() yang langsung menampilkan semua informasi peminjaman ke layar.
 
 ### PEMINJAMANSERVICE.JAVA
-<img width="424" height="37" alt="image" src="https://github.com/user-attachments/assets/337dba05-f047-4ce4-af5e-f0897110d1e9" />
+<img width="207" height="26" alt="image" src="https://github.com/user-attachments/assets/3e78bf60-7612-44d7-98bc-bc967346b79a" />
+
 
 Menyatakan bahwa class ini berada di dalam package service.
 
@@ -83,7 +86,7 @@ Potongan kode tersebut adalah bagian penutup dari method ubahPeminjaman(). Jika 
 Method `hapusPeminjaman()` berfungsi untuk menghapus data peminjaman dari daftar. Pertama, method memanggil `lihatPeminjaman()` agar pengguna bisa melihat daftar data yang tersedia. Jika daftar kosong, method langsung berhenti dengan `return`. Jika ada data, pengguna diminta memilih nomor data yang ingin dihapus, lalu program mengurangi nilai input dengan `-1` agar sesuai dengan indeks `ArrayList`. Jika nomor valid (masuk dalam rentang data), maka data pada indeks tersebut dihapus dengan `remove()`, dan program menampilkan pesan **"Data berhasil dihapus!"**. Jika tidak valid, maka akan muncul pesan **"Nomor tidak valid!"**. Kurung kurawal terakhir `}` menutup method, dan `}` berikutnya menutup kelas `PeminjamanService`.
 
 ### MAIN.JAVA
-<img width="394" height="38" alt="image" src="https://github.com/user-attachments/assets/45c3c5bc-8b28-4dad-a2d8-ebb63b83c103" />
+<img width="172" height="29" alt="image" src="https://github.com/user-attachments/assets/26a5d691-ad40-43d1-aa29-c5871876f69d" />
 
 Menyatakan bahwa class ini berada di dalam package main.
 
@@ -111,6 +114,40 @@ Program ini menampilkan menu peminjaman dengan pilihan tambah, lihat, ubah, hapu
 
 ### OUTPUT
 <img width="475" height="185" alt="image" src="https://github.com/user-attachments/assets/35efe001-75ea-4ea8-a200-76ef41745c05" />
+
 Diatas merupakan output.
 
 #
+<img width="476" height="340" alt="image" src="https://github.com/user-attachments/assets/192b7f8d-a6a8-4a9b-993b-344c252d36e6" />
+
+Diatas merupakan saat user memilih menu nomor 1, maka user akan dinminta beberapa keterangan saat meminjam barang sekre.
+
+#
+<img width="471" height="417" alt="image" src="https://github.com/user-attachments/assets/1b9509ed-9fe9-481c-8c1c-748882aee7b5" />
+
+Diatas saat user sudah melakukan pengisian data, dan memilih menu nomor 2. Maka akan menampilkan daftar orang yang sudah mengisi data peminjaman barang sekre.
+
+#
+<img width="490" height="594" alt="image" src="https://github.com/user-attachments/assets/55b4a6ea-93ed-4d21-9778-a0e736159d39" />
+
+Diatas saat user ingin mengubah data orang yang pernah mengisi data peminjaman barang. User memilih menu nomor 3 yang akan diminta untuk mengisi beberapa keterangan yang baru.
+
+#
+<img width="472" height="420" alt="image" src="https://github.com/user-attachments/assets/9b17224b-5829-4cfc-963b-6e35809599d9" />
+
+Diatas merupakan hasil yang telah diubah oleh user pada daftar peminjaman barang.
+
+#
+<img width="480" height="475" alt="image" src="https://github.com/user-attachments/assets/871f9df5-cd10-4d76-b178-bb4215aa3c8f" />
+
+Disaat user ingin menghapus daftar peminjaman barang, maka akan memilih menu nomor 4. Yang akan ditampilkan daftar peminjaman apa saja yang ada dan akan diminta nomor berapa yang akan dihapus.
+
+#
+<img width="483" height="263" alt="image" src="https://github.com/user-attachments/assets/1c7ec85f-62e5-4ea1-8def-5ecb34eed6db" />
+
+Data peminjaman berhasil dihapus dalam daftar.
+
+#
+<img width="836" height="363" alt="image" src="https://github.com/user-attachments/assets/cb31614b-1068-4929-8f29-0910932be879" />
+
+Dan yang terakhir yaitu saat user memilih menu nomor 5, selanjutnya yaitu keluar dari program dan selesai.
